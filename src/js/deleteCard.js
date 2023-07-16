@@ -7,6 +7,5 @@ export async function deleteCard(e) {
     const card = e.target.parentElement.parentElement;
     const cardID = card.id;
     deletePost(cardID);
-    console.log("hi");
     card.remove();
 }

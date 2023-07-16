@@ -21,7 +21,7 @@ upLoadPosts();
 
 function updateCard(e) {
     if (!e.target.classList.contains("btn-success")) {
-        return;
+        return ;
     }
     const card = e.target.parentElement;
     const info = {
@@ -35,12 +35,16 @@ function updateCard(e) {
 }
 
 
-function saveChange(e) {
+async function saveChange(e) {
     e.preventDefault()
     const updateValue = {
         "title":   `${refs.title.value}`,
         "body": `${refs.body.value}`
     }
-    updatePost(updateValue, cardId);
-    
-}
+    const updateCard = await updatePost(updateValue, cardId);
+    const card = document.getElementById(`${updateCard.id}`);
+    const title = card.querySelector(".card-title");
+    const body = card.querySelector(".card-text");
+    title.textContent = `${updateCard.title}`;
+    body.textContent = `${updateCard.body}`;
+}   

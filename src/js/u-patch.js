@@ -21,8 +21,9 @@
             },
             "body": JSON.stringify(comment),    
         }
-        const res = await fetch(`${BASE_URL}/posts/${postId}`);
-        const data = res.json( );
-        console.log(data)
+        const res = await fetch(`${BASE_URL}/posts/${postId}`, options);
+        const data = await res.json();
+        return await data;
+        
         
     }

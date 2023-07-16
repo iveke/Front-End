@@ -15,6 +15,5 @@ export async function upLoadPosts() {
     </li>`;
         postStr.push(card);
     });
-    console.log("hello")
     refs.cards.insertAdjacentHTML('beforeend', postStr.join(""));
 }
