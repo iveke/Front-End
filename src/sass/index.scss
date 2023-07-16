@@ -1,0 +1,19 @@
+@import './common';
+@import './header';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.cards{
+    display: flex;
+    padding-left: 0;
+    // padding: 0 auto;
+    width: 1200px;
+    gap: 60px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+       
+}
