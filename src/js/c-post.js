@@ -1,13 +1,14 @@
 const BASE_URL = "http://localhost:1532"
 
-export function addComment(comment){
+export async function addComment(comment){
     const options = {
         "method": "POST",
         "headers": {
             "Content-Type": "application/json",
             "Accept" : "application/json"
         },
-        body: JSON.stringify(comment),
+        "body": JSON.stringify(comment),
     };
-    return fetch(`${BASE_URL}/comments`, options).then(res => res.json()).then(console.log);
+    const res = await fetch(`${BASE_URL}/comment`, options)
+    return console.log( res.json());
 }

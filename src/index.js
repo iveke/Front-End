@@ -7,7 +7,7 @@ import { upLoadPosts } from './js/upLoadPosts.js';
 
 let cardId;
 export const refs = {
-    send: document.querySelector(".btn"),
+    form: document.getElementById("form"),
     cards: document.querySelector(".cards"),
     title: document.getElementById("title"),
     body: document.getElementById("body"),
@@ -16,12 +16,29 @@ export const refs = {
 
 refs.cards.addEventListener('click', deleteCard);
 refs.cards.addEventListener('click', updateCard);
+refs.form.addEventListener('submit', onSubmitForm);
 upLoadPosts();
 
+function onSubmitForm(e) {
+    
+    e.preventDefault();
+    const formData = new FormData(refs.form);
+    const res = formData.get("comment");
+    console.log(res);
+    createComment(res);
+}
+
+ function createComment(res) {
+    const comment = {
+        'body': `${res}`,
+    }
+    console.log(comment)
+    addComment(comment);
+}
 
 function updateCard(e) {
     if (!e.target.classList.contains("btn-success")) {
-        return ;
+        return;
     }
     const card = e.target.parentElement;
     const info = {
@@ -38,7 +55,7 @@ function updateCard(e) {
 async function saveChange(e) {
     e.preventDefault()
     const updateValue = {
-        "title":   `${refs.title.value}`,
+        "title": `${refs.title.value}`,
         "body": `${refs.body.value}`
     }
     const updateCard = await updatePost(updateValue, cardId);
