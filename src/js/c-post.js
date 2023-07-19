@@ -9,6 +9,6 @@ export async function addComment(comment){
         },
         "body": JSON.stringify(comment),
     };
-    const res = await fetch(`${BASE_URL}/comment`, options)
+    const res = await fetch(`${BASE_URL}/comments`, options)
     return console.log( res.json());
 }
