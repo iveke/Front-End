@@ -1,22 +1,22 @@
 {
-  "name": "parcel-project-template",
+  "name": "Front-End",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://Zetonen.github.io/parcel-template",
+  "homepage": "https://iveke.github.io/Front-End",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /parcel-template/",
+    "build": "parcel build src/*.html --public-url /Front-End/",
     "server": "json-server --watch db.json -d 300 -p 1532"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Zetonen/parcel-project-template.git"
+    "url": "git+https://github.com/iveke/Front-End.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Zetonen/parcel-template/issues"
+    "url": "https://github.com/iveke/Front-End/issues"
   },
   "dependencies": {
     "json-server": "^0.17.3",
