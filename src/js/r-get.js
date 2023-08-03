@@ -1,11 +1,24 @@
 const BASE_URL = "http://localhost:1532";
 
 export async function getComment() {
-    const res = await fetch(`${BASE_URL}/comments`)
-    return res.json();
+    try {
+        const res = await fetch(`${BASE_URL}/comments`);
+
+        return res.json();
+
+    } catch (err) {
+        alert(`sorry you have fail ${err}`);
+    }
 }
 
 export async function getPosts() {
-    const res = await fetch(`${BASE_URL}/posts`);
-    return res.json();
+    try {
+        const res = await fetch(`${BASE_URL}/posts`);
+
+        return res.json();
+
+    } catch (err) {
+        alert(`sorry you have fail ${err}`)
+    }
+
 }

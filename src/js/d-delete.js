@@ -11,6 +11,11 @@ export async function deletePost(cardID) {
     const options = {
         "method": "DELETE",
     }
-    const res = await fetch(`${BASE_URL}/posts/${cardID}`, options);
+    try{
+        const res = await fetch(`${BASE_URL}/posts/${cardID}`, options);
+    } catch(err){
+        alert(`sorry you have fail ${err}`);
+    }
+   
    
 }

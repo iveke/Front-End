@@ -9,6 +9,11 @@ export async function addComment(comment){
         },
         "body": JSON.stringify(comment),
     };
-    const res = await fetch(`${BASE_URL}/comments`, options)
-    return console.log( res.json());
+    try{
+        const res = await fetch(`${BASE_URL}/comments`, options)
+        return console.log( res.json());
+    } catch(err){
+        alert(`sorry you have fail ${err}`)
+    }
+    
 }
