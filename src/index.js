@@ -8,7 +8,7 @@ import { upLoadComments } from './js/upLoadComments.js';
 import { onSubmitForm } from './js/onSubmitForm.js';
 import { updateCard } from './js/updateCard.js';
 
-let cardId;
+
 export const refs = {
     form: document.getElementById("form"),
     cards: document.querySelector(".cards"),

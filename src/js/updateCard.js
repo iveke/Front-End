@@ -1,5 +1,6 @@
 import { refs } from "..";
-
+let cardId;
+import { updatePost } from "./u-patch";
 export function updateCard(e) {
     if (!e.target.classList.contains("btn-success")) {
         return;
@@ -11,7 +12,9 @@ export function updateCard(e) {
     }
     refs.title.value = info.title;
     refs.body.value = info.text;
+    console.log(cardId);
     cardId = card.parentElement.id;
+    console.log(cardId)
     refs.save.addEventListener('click', saveChange);
 }
 
